@@ -47,9 +47,10 @@ function App() {
   }
   return (
   <>
+      <div className="emojiList">{emojiIcons} </div>
       <Picker data={data} onEmojiSelect={emoji => addEmojis(emoji)} emojiButtonSize={40} emojiSize={35} searchPosition="none" navPosition="none" maxFrequentRows={0} />
 
-    <div className="emojiList">{emojiIcons} </div><div className="haiku">{haiku ? haiku.response : null}</div> <div className="center">{emojiIcons.length >= 1 ? <button type="button" onClick={handleClear}>🗑</button> : null}</div></>
+<div className="haiku">{haiku ? haiku.response : null}</div> <div className="center">{emojiIcons.length >= 1 ? <button type="button" onClick={handleClear}>🗑</button> : null}</div></>
   )
 }
 
