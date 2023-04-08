@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState , useEffect } from 'react'
 import './App.css'
 
 import data from '@emoji-mart/data'
@@ -18,8 +18,12 @@ function App() {
   const [emojiIcons, setEmojiIcons] = useState([])
   const [haiku, setHaiku] = useState('')
 
+  useEffect(() => {
+    generateHaiku()
+  }, [emojiKeywords]);
+
   const generateHaiku = () => {
-    console.log(emojiKeywords)
+    if (emojiKeywords.length > 0) {
     openai.createCompletion({
       model: 'text-davinci-003', 
       prompt: `generate a haiku poem from the following keywords: ${emojiKeywords}. The first line should have 5 syllables in total, the second line should have 7 syllables in total and the third line should have 5 syllables in total.`,
@@ -34,19 +38,12 @@ function App() {
       });
     })
   }
+  }
 
   const addEmojis = (emoji) => {
-    if (emojiIcons.length === 0) {
-      setEmojiKeywords([...emoji.keywords])
-    }
-    else {
     setEmojiKeywords([...emojiKeywords, ...emoji.keywords])
-    }
     setEmojiIcons([...emojiIcons, emoji.native])
-
-    if (emojiIcons.length > 0) {
-      generateHaiku(emoji)
-    }
+    generateHaiku(emoji)
   }
 
   const handleClear = () => {
@@ -55,7 +52,7 @@ function App() {
     setHaiku('')
   }
   return (
-  <><div className="instructions">ChatGPT will generate a haiku for you (as best as it can ✨) based on the emojis you select! Choose a minimum of 2 to inspire it.</div>
+  <><div className="instructions">ChatGPT will generate a haiku for you (as best as it can ✨) based on the emojis you choose!</div>
       <div className="emojiList">{emojiIcons} </div>
       <Picker data={data} onEmojiSelect={emoji => addEmojis(emoji)} emojiButtonSize={40} emojiSize={35} searchPosition="none" navPosition="none" maxFrequentRows={0} />
 
