@@ -57,7 +57,7 @@ function App() {
       <div className="emojiList">{emojiIcons} </div>
       <Picker data={data} onEmojiSelect={emoji => addEmojis(emoji)} emojiButtonSize={40} emojiSize={35} searchPosition="none" navPosition="none" maxFrequentRows={0} />
 
-<div className="haiku">{haiku ? haiku.response : null}</div> <div className="center">{emojiIcons.length >= 1 ? <button type="button" onClick={handleClear}>🗑</button> : null}</div></>
+<div className="haiku">{haiku ? haiku.response : null}</div> <div className="center">{emojiIcons.length >= 1 ? <button type="button" onClick={handleClear}>🗑</button> : null}</div><div className="instructions">ChatGPT will generate a haiku for you (as best as it can 👀) based on the emojis you select! Choose a minimum of 2 emojis to run.</div></>
   )
 }
 

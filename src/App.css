@@ -51,6 +51,13 @@ em-emoji-picker {
   color: #000;
   white-space: pre;
 }
+.instructions {
+  font-family: 'Larsseit';
+  font-size: 15px;
+  margin-left: 2rem;
+  width: 350px;
+  color: #000;
+}
 .emojiList {
   font-size: 50px;
   width: 350px;
