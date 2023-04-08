@@ -46,7 +46,8 @@ em-emoji-picker {
 .haiku {
   font-family: 'Larsseit';
   font-size: 25px;
-  width: 460px
+  width: 460px;
+  color: #000
 }
 .emojiList {
   font-size: 50px;

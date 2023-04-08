@@ -17,8 +17,6 @@ function App() {
   const [emojiKeywords, setEmojiKeywords] = useState([])
   const [emojiIcons, setEmojiIcons] = useState([])
   const [haiku, setHaiku] = useState('')
-  const [message, setMessage] = useState('')
-
 
   const generateHaiku = () => {
     openai.createCompletion({
@@ -28,6 +26,7 @@ function App() {
       temperature: 0.9,
       presence_penalty: 0.6,
     })
+    
     .then((response) => {
       setHaiku({
         response: `${response.data.choices[0].text}`
@@ -44,9 +43,9 @@ function App() {
 
   return (
   <>
-      <Picker data={data} onEmojiSelect={emoji => addEmojis(emoji)} emojiButtonSize={48} emojiSize={48} searchPosition="none" navPosition="none" maxFrequentRows={0} />
+      <Picker data={data} onEmojiSelect={emoji => addEmojis(emoji)} emojiButtonSize={40} emojiSize={40} searchPosition="none" navPosition="none" maxFrequentRows={0} />
 
-    <div className="emojiList">{message}<br />{emojiIcons}</div><div className="haiku">{haiku ? haiku.response : null}</div></>
+    <div className="emojiList">{emojiIcons}</div><div className="haiku">{haiku ? haiku.response : null}</div></>
   )
 }
 
