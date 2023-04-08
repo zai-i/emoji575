@@ -55,7 +55,7 @@ function App() {
     setHaiku('')
   }
   return (
-  <><div className="instructions">ChatGPT will generate a haiku for you (as best as it can ✨) based on the emojis you select! Choose a minimum of 2 emojis to inspire the robots.</div>
+  <><div className="instructions">ChatGPT will generate a haiku for you (as best as it can ✨) based on the emojis you select! Choose a minimum of 2 emojis to inspire it.</div>
       <div className="emojiList">{emojiIcons} </div>
       <Picker data={data} onEmojiSelect={emoji => addEmojis(emoji)} emojiButtonSize={40} emojiSize={35} searchPosition="none" navPosition="none" maxFrequentRows={0} />
 
