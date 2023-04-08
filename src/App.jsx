@@ -22,8 +22,8 @@ function App() {
     openai.createCompletion({
       model: 'text-davinci-003', 
       prompt: `generate a haiku poem from the following keywords: ${emojiKeywords}. The first line should have 5 syllables in total, the second line should have 7 syllables in total and the third line should have 5 syllables in total.`,
-      max_tokens: 2048,
-      temperature: 0.9,
+      max_tokens: 100,
+      temperature: 0.7,
       presence_penalty: 0.6,
     })
     
