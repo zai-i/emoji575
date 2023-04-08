@@ -15,7 +15,6 @@
 body {
   margin: 1.5rem;
   display: flex;
-  place-items: center;
   justify-content: center;
   min-height: 100vh;
   background-color: #ffffff;
