@@ -40,12 +40,16 @@ function App() {
     generateHaiku(emoji)
   }
 
-
+  const handleClear = () => {
+    setEmojiKeywords([]);
+    setEmojiIcons([])
+    setHaiku('')
+  }
   return (
   <>
-      <Picker data={data} onEmojiSelect={emoji => addEmojis(emoji)} emojiButtonSize={40} emojiSize={40} searchPosition="none" navPosition="none" maxFrequentRows={0} />
+      <Picker data={data} onEmojiSelect={emoji => addEmojis(emoji)} emojiButtonSize={40} emojiSize={35} searchPosition="none" navPosition="none" maxFrequentRows={0} />
 
-    <div className="emojiList">{emojiIcons}</div><div className="haiku">{haiku ? haiku.response : null}</div></>
+    <div className="emojiList">{emojiIcons} </div><div className="haiku">{haiku ? haiku.response : null}</div> <div className="center">{emojiIcons.length >= 1 ? <button type="button" onClick={handleClear}>🗑</button> : null}</div></>
   )
 }
 
