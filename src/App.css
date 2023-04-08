@@ -47,13 +47,14 @@ em-emoji-picker {
   font-family: 'Larsseit';
   font-size: 18px;
   margin-left: 2rem;
+  margin-top: -3rem;
   width: 350px;
   color: #000;
   white-space: pre;
 }
 .instructions {
   font-family: 'Larsseit';
-  font-size: 15px;
+  font-size: 18px;
   margin-left: 2rem;
   margin-bottom: 1rem;
   width: 350px;
@@ -64,6 +65,7 @@ em-emoji-picker {
   width: 350px;
   line-height: 50px;
   margin-left: 1rem;
+  margin-bottom: 1rem;
 }
 button {
   background: none;
