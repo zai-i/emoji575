@@ -19,7 +19,7 @@ function App() {
   const [haiku, setHaiku] = useState('')
 
   const generateHaiku = () => {
-    if (emojiIcons.length > 0) {
+    console.log(emojiKeywords)
     openai.createCompletion({
       model: 'text-davinci-003', 
       prompt: `generate a haiku poem from the following keywords: ${emojiKeywords}. The first line should have 5 syllables in total, the second line should have 7 syllables in total and the third line should have 5 syllables in total.`,
@@ -33,7 +33,6 @@ function App() {
         response: `${response.data.choices[0].text}`
       });
     })
-    }
   }
 
   const addEmojis = (emoji) => {
@@ -44,7 +43,10 @@ function App() {
     setEmojiKeywords([...emojiKeywords, ...emoji.keywords])
     }
     setEmojiIcons([...emojiIcons, emoji.native])
-    generateHaiku(emoji)
+
+    if (emojiIcons.length > 0) {
+      generateHaiku(emoji)
+    }
   }
 
   const handleClear = () => {
