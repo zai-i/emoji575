@@ -11,7 +11,6 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
-
 body {
   margin: 1.5rem;
   display: flex;
@@ -47,7 +46,6 @@ em-emoji-picker {
   font-size: 18px;
   margin-left: 2rem;
   margin-top: -3rem;
-  width: 350px;
   color: #000;
   white-space: pre;
 }
@@ -56,12 +54,10 @@ em-emoji-picker {
   font-size: 18px;
   margin-left: 2rem;
   margin-bottom: 1rem;
-  width: 350px;
   color: #000;
 }
 .emojiList {
   font-size: 50px;
-  width: 350px;
   line-height: 50px;
   margin-left: 1rem;
   margin-bottom: 1rem;
@@ -81,4 +77,15 @@ button {
 }
 .center {
   text-align: center;
+}
+.haiku, .instructions, .emojiList {
+  width: 350px
+}
+@media screen and (min-width: 950px) {
+  body {
+    place-items: center
+  }
+  .haiku, .instructions, .emojiList {
+    width: 890px
+  }
 }

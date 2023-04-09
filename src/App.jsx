@@ -14,6 +14,21 @@ delete config.baseOptions.headers['User-Agent'];
 let openai = new OpenAIApi(config);
 
 function App() {
+
+  const [width, setWidth] = useState(window.innerWidth);
+
+  function handleWindowSizeChange() {
+      setWidth(window.innerWidth);
+  }
+  useEffect(() => {
+      window.addEventListener('resize', handleWindowSizeChange);
+      return () => {
+          window.removeEventListener('resize', handleWindowSizeChange);
+      }
+  }, []);
+
+  const isMobile = width <= 950;
+
   const [emojiKeywords, setEmojiKeywords] = useState([])
   const [emojiIcons, setEmojiIcons] = useState([])
   const [haiku, setHaiku] = useState('')
@@ -54,7 +69,7 @@ function App() {
   return (
   <><div className="instructions">ChatGPT will generate a haiku for you (as best as it can ✨) based on the emojis you choose!</div>
       <div className="emojiList">{emojiIcons} </div>
-      <Picker data={data} onEmojiSelect={emoji => addEmojis(emoji)} emojiButtonSize={40} emojiSize={35} searchPosition="none" navPosition="none" maxFrequentRows={0} />
+      <Picker data={data} onEmojiSelect={emoji => addEmojis(emoji)} emojiButtonSize={isMobile ? 40 : 100} emojiSize={isMobile ? 35 : 95} searchPosition="none" navPosition="none" maxFrequentRows={0} />
 
 <div className="haiku">{haiku ? haiku.response : null}</div> <div className="center">{emojiIcons.length >= 1 ? <button type="button" onClick={handleClear}>🗑</button> : null}</div></>
   )
