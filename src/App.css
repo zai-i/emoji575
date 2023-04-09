@@ -88,4 +88,9 @@ button {
   .haiku, .instructions, .emojiList {
     width: 890px
   }
+  em-emoji-picker {
+    height: 65vh;
+    min-height: 400px;
+    max-height: 800px;
+  }
 }
