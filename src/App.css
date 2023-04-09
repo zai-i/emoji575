@@ -31,15 +31,15 @@ em-emoji-picker {
   --color-border: rgba(0, 0, 0, 0);
   --font-family: 'Larsseit';
   --font-size: 30px;
-  --rgb-accent: 255, 255, 255;
+  --rgb-accent: 0, 255, 255;
   --rgb-background: rgba(0, 0, 0, 0);
   --rgb-color: 255, 255, 255;
   --rgb-input: 255, 255, 255;
   --shadow: rgba(0, 0, 0, 0);
 
-  height: 50vh;
-  min-height: 400px;
-  max-height: 800px;
+  height: 25vh;
+  min-height: 300px;
+  max-height: 500px;
 }
 .haiku {
   font-family: 'Larsseit';
@@ -72,25 +72,27 @@ button {
   font-weight: 900;
   color: #777;
 	outline: inherit;
-  margin-top: 1em;
-  margin-bottom: 1em;
 }
-.center {
-  text-align: center;
+.container {
+  display: flex;
+  flex-direction: row;
 }
 .haiku, .instructions, .emojiList {
   width: 350px
 }
 @media screen and (min-width: 950px) {
-  body {
-    place-items: center
-  }
   .haiku, .instructions, .emojiList {
     width: 890px
   }
   em-emoji-picker {
-    height: 65vh;
+    height: 60vh;
     min-height: 400px;
     max-height: 800px;
+  }
+  .emojiList {
+    font-size: 75px; 
+    line-height: 75px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
   }
 }

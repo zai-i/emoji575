@@ -41,7 +41,7 @@ function App() {
     if (emojiKeywords.length > 0) {
     openai.createCompletion({
       model: 'text-davinci-003', 
-      prompt: `generate a haiku poem from the following keywords: ${emojiKeywords}. The first line should have 5 syllables in total, the second line should have 7 syllables in total and the third line should have 5 syllables in total.`,
+      prompt: `generate a haiku poem from the following keywords: ${emojiKeywords}. The first line should have 5 syllables in total, the second line should have 7 syllables in total and the third line should have 5 syllables in total. The poem should never exceed 3 lines.`,
       max_tokens: 100,
       temperature: 0.7,
       presence_penalty: 0.6,
@@ -69,9 +69,9 @@ function App() {
   return (
   <><div className="instructions">ChatGPT will generate a haiku for you (as best as it can ✨) based on the emojis you choose!</div>
       <div className="emojiList">{emojiIcons} </div>
-      <Picker data={data} onEmojiSelect={emoji => addEmojis(emoji)} emojiButtonSize={isMobile ? 40 : 100} emojiSize={isMobile ? 35 : 95} searchPosition="none" navPosition="none" maxFrequentRows={0} />
+      <Picker data={data} onEmojiSelect={emoji => addEmojis(emoji)} emojiButtonSize={isMobile ? 40 : 100} emojiSize={isMobile ? 35 : 75} searchPosition="none" navPosition="none" maxFrequentRows={0} />
 
-<div className="haiku">{haiku ? haiku.response : null}</div> <div className="center">{emojiIcons.length >= 1 ? <button type="button" onClick={handleClear}>🗑</button> : null}</div></>
+<div className="container"><div className="haiku">{haiku ? haiku.response : null}</div> {emojiIcons.length >= 1 ? <button type="button" onClick={handleClear}>🗑</button> : null}</div></>
   )
 }
 
