@@ -77,11 +77,11 @@ button {
   display: flex;
   flex-direction: row;
 }
-.haiku, .instructions, .emojiList {
+.haiku, .instructions, .emojiList, .container {
   width: 350px
 }
 @media screen and (min-width: 950px) {
-  .haiku, .instructions, .emojiList {
+  .haiku, .instructions, .emojiList, .container {
     width: 890px
   }
   em-emoji-picker {
