@@ -35,7 +35,7 @@ export const ThemeToggle = () => {
       type="button"
       className="theme"
       onClick={() => nextTheme()}
-    >Switch theme 
+    >switch theme 
     </button>
   );
 }
