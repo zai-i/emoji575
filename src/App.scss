@@ -95,6 +95,11 @@ button {
 }
 button.theme {
   font-size: 35px;
+  border: 2px solid #101010;
+  border-radius: 4px;
+  padding: 5px;
+  height: 45px;
+  line-height: 30px
 }
 .themeToggle {
   text-align: right;
