@@ -27,7 +27,7 @@ function App() {
       }
   }, []);
 
-  const isMobile = width <= 950;
+  const isMobile = width <= 800;
 
   const [emojiKeywords, setEmojiKeywords] = useState([])
   const [emojiIcons, setEmojiIcons] = useState([])
@@ -69,7 +69,7 @@ function App() {
   return (
   <><div className="instructions">ChatGPT will generate a haiku for you (as best as it can ✨) based on the emojis you choose!</div>
       <div className="emojiList">{emojiIcons} </div>
-      <Picker data={data} onEmojiSelect={emoji => addEmojis(emoji)} emojiButtonSize={isMobile ? 40 : 100} emojiSize={isMobile ? 35 : 75} searchPosition="none" navPosition="none" maxFrequentRows={0} />
+      <Picker data={data} onEmojiSelect={emoji => addEmojis(emoji)} emojiButtonSize={isMobile ? 40 : 80} emojiSize={isMobile ? 35 : 75} searchPosition="none" navPosition="none" maxFrequentRows={0} />
 
 <div className="container"><div className="haiku">{haiku ? haiku.response : null}</div> {emojiIcons.length >= 1 ? <button type="button" onClick={handleClear}>🗑</button> : null}</div></>
   )

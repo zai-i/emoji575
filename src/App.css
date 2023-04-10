@@ -44,23 +44,20 @@ em-emoji-picker {
 .haiku {
   font-family: 'Larsseit';
   font-size: 18px;
-  margin-left: 2rem;
-  margin-top: -3rem;
+  margin: -3rem 0 0 2rem;
   color: #000;
   white-space: pre;
 }
 .instructions {
   font-family: 'Larsseit';
   font-size: 18px;
-  margin-left: 2rem;
-  margin-bottom: 1rem;
+  margin: 0 0 1rem 2rem;
   color: #000;
 }
 .emojiList {
   font-size: 50px;
   line-height: 50px;
-  margin-left: 1rem;
-  margin-bottom: 1rem;
+  margin: 0 0 1rem 1rem;
 }
 button {
   background: none;
@@ -78,11 +75,14 @@ button {
   flex-direction: row;
 }
 .haiku, .instructions, .emojiList, .container {
-  width: 350px
+  width: 350px;
 }
-@media screen and (min-width: 950px) {
+@media screen and (min-width: 800px) {
   .haiku, .instructions, .emojiList, .container {
-    width: 890px
+    width: 720px
+  }
+  .instructions {
+    margin: 0 0 1rem 1rem;
   }
   em-emoji-picker {
     height: 60vh;
@@ -94,5 +94,6 @@ button {
     line-height: 75px;
     margin-top: 2rem;
     margin-bottom: 2rem;
+    margin: 2rem 0 2rem 0;
   }
 }
