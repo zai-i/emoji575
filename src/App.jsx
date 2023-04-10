@@ -1,9 +1,11 @@
 import React, { useState , useEffect } from 'react'
-import './App.css'
+import './App.scss'
 
 import data from '@emoji-mart/data'
 import Picker from '@emoji-mart/react'
 import { Configuration, OpenAIApi } from 'openai';
+
+import { ThemeToggle } from "./themeToggle.jsx";
 
 // This hardcodes insertion of 'User-Agent'
 let config = new Configuration({ apiKey: import.meta.env.VITE_OPENAI_API_KEY});
@@ -67,7 +69,9 @@ function App() {
     setHaiku('')
   }
   return (
-  <><div className="instructions">ChatGPT will generate a haiku for you (as best as it can ✨) based on the emojis you choose!</div>
+  <>
+  <div className="themeToggle"><ThemeToggle/></div>
+  <div className="instructions">ChatGPT will generate a haiku for you (as best as it can) based on the emojis you choose!</div>
       <div className="emojiList">{emojiIcons} </div>
       <Picker data={data} onEmojiSelect={emoji => addEmojis(emoji)} emojiButtonSize={isMobile ? 40 : 80} emojiSize={isMobile ? 35 : 75} searchPosition="none" navPosition="none" maxFrequentRows={0} />
 
