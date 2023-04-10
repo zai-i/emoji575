@@ -78,7 +78,7 @@ button {
 }
 @media screen and (min-width: 800px) {
   body {
-    background-size: cover;
+    background-image: radial-gradient(#bf9eff, #fff)
   }
   .haiku, .instructions, .emojiList, .container {
     width: 720px
@@ -98,14 +98,4 @@ button {
     margin-bottom: 2rem;
     margin: 2rem 0 2rem 0;
   }
-}
-::-webkit-scrollbar {
-  width: 15px;
-}
-::-webkit-scrollbar-track {
-  border: none
-}
-::-webkit-scrollbar-thumb {
-  border-radius: 8px;
-  border:16px solid rgba(0, 0, 0, 0.25);
 }
