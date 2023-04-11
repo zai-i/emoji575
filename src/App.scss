@@ -2,6 +2,11 @@
   font-family: 'Larsseit';
   src: url('/Larsseit.otf');
 }
+@font-face {
+  font-family: 'Larsseit Bold';
+  src: url('/Larsseit-Bold.otf');
+}
+
 html[data-theme='yellow'] {
   body {
     --bg: rgba(234, 193, 28, 1);
@@ -61,7 +66,7 @@ em-emoji-picker {
   --border-radius: 0px;
   --category-icon-size: 24px;
   --color-border: var(--bg);
-  --font-family: 'Larsseit';
+  --font-family: 'Larsseit Bold';
   --font-size: 30px;
   --rgb-accent: var(--rgb);
   --rgb-background: rgba(0,0,0,0);
@@ -101,7 +106,7 @@ button.theme {
   background: rgba(255, 255, 255, 0.5);
   padding: 5px;
   border-radius: 5px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Larsseit Bold', Arial, Helvetica, sans-serif;
 }
 .themeToggle {
   text-align: right;
