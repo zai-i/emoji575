@@ -54,6 +54,7 @@ body {
   background-attachment: fixed;
   background-size: cover;
   color: #101010;
+  font-family: 'Larsseit';
 }
 em-emoji-picker {
   --border-radius: 0px;
@@ -71,13 +72,11 @@ em-emoji-picker {
   max-height: 500px;
 }
 .haiku {
-  font-family: 'Larsseit';
   font-size: 18px;
   margin: -3rem 0 0 2rem;
   white-space: pre;
 }
 .instructions {
-  font-family: 'Larsseit';
   font-size: 18px;
   margin: 0 0 1rem 2rem;
 }
@@ -92,7 +91,6 @@ button {
 	padding: 0;
   font-size: 30px;
 	cursor: pointer;
-  font-family: 'Larsseit';
   font-weight: 900;
 	outline: inherit;
 }
