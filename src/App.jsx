@@ -75,7 +75,7 @@ function App() {
       <div className="emojiList">{emojiIcons} </div>
       <Picker data={data} onEmojiSelect={emoji => addEmojis(emoji)} emojiButtonSize={isMobile ? 40 : 80} emojiSize={isMobile ? 35 : 75} searchPosition="none" navPosition="none" maxFrequentRows={0} />
 
-<div className="container"><div className="haiku">{haiku ? haiku.response : null}</div> {emojiIcons.length >= 1 ? <button type="button" onClick={handleClear}>🗑</button> : null}</div></>
+<div className="container"><div className="haiku">{haiku ? haiku.response : null}</div> {emojiIcons.length >= 1 ? <button type="button" onClick={handleClear}>🗑</button> : null}</div><p className="credit">made with <span></span> by <a href="http://www.zaiz.ai">Zainab Ismail</a></p></>
   )
 }
 
