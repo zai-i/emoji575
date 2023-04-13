@@ -39,11 +39,21 @@ function App() {
     generateHaiku()
   }, [emojiKeywords]);
 
+  const smarten = (string) => {
+    string = string.replace(/(^|[-\u2014/([{"\s])'/g, '$1\u2018');      // opening singles
+    string = string.replace(/'/g, '\u2019');                            // closing singles & apostrophes
+    string = string.replace(/(^|[-\u2014/([{\u2018\s])"/g, '$1\u201c'); // opening doubles
+    string = string.replace(/"/g, '\u201d');                            // closing doubles
+    string = string.replace(/--/g, '\u2014');                           // em-dashes
+    
+    return string;
+  };
+
   const generateHaiku = () => {
     if (emojiKeywords.length > 0) {
     openai.createCompletion({
       model: 'text-davinci-003', 
-      prompt: `Generate one haiku poem from the following keywords: ${emojiKeywords}. The first line should have 5 syllables in total, the second line should have 7 syllables in total, and the third line should have 5 syllables in total. The poem should never exceed 3 lines.`,
+      prompt: `Generate one haiku poem from the following keywords: ${emojiKeywords}. The first line of the poem should have 5 syllables in total, the second line of the poem should have 7 syllables in total, and the third line of the poem should have 5 syllables in total. The poem should never exceed 3 lines.`,
       max_tokens: 100,
       temperature: 0.7,
       presence_penalty: 0.6,
@@ -51,7 +61,7 @@ function App() {
     
     .then((response) => {
       setHaiku({
-        response: `${response.data.choices[0].text}`
+        response: smarten(`${response.data.choices[0].text}`)
       });
     })
   }
