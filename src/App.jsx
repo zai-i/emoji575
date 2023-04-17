@@ -55,7 +55,6 @@ function App() {
   };
 
   const addEmojis = (emoji) => {
-    console.log(emojiKeywords)
     if (emojiIcons.length < 5) {
     setEmojiKeywords([...emojiKeywords, ...emoji.keywords.slice(0, 3)]);
     setEmojiIcons([...emojiIcons, emoji.native]);
