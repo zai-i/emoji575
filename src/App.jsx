@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './normalize.css';
 import './App.scss';
 
 import data from '@emoji-mart/data';
@@ -40,7 +41,9 @@ function App() {
 
   const generateHaiku = () => {
     if (emojiKeywords.length > 0) {
-        fetch(`${import.meta.env.VITE_SITE_URL}/api?keywords=${emojiKeywords}`)
+        fetch(`${import.meta.env.VITE_SITE_URL}/api?keywords=${emojiKeywords}/`, {
+          method: 'GET',
+          mode: 'cors' })
         .then(response => response.json())  
         .then(function (response) {
           setHaiku({
