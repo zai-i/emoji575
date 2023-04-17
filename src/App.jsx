@@ -43,7 +43,11 @@ function App() {
     if (emojiKeywords.length > 0) {
         fetch(`${import.meta.env.VITE_SITE_URL}/api?keywords=${emojiKeywords}/`, {
           method: 'GET',
-          mode: 'cors' })
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          mode: 'cors',
+          body: JSON.stringify(data) })
         .then(response => response.json())  
         .then(function (response) {
           setHaiku({
