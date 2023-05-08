@@ -73,7 +73,7 @@ function App() {
         <ThemeToggle />
       </div>
       <div className='instructions'>
-        ChatGPT will generate a haiku for you (as best as it can) based on the
+        ChatGPT will generate a haiku for you based on the combination of
         emojis you choose!
       </div>
       <div className='emojiList'>{emojiIcons} </div>
