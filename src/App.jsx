@@ -32,9 +32,9 @@ function App() {
   const generateHaiku = () => {
     if (emojiKeywords.length > 0) {
         fetch(`${import.meta.env.VITE_SITE_URL}/api?text=${emojiKeywords}/`)
-        .then(response => response.text()  
+        .then(response => response.json()  
         .then(function (response) {
-          setHaiku(response)
+          setHaiku(response.text)
         })
         .catch(function (error) {
           console.error(error);
@@ -76,7 +76,7 @@ function App() {
       />
 
       <div className='container'>
-        <div className='haiku'>{haiku ? haiku.text : null}</div>{' '}
+        <div className='haiku'>{haiku ? haiku : null}</div>{' '}
         {emojiIcons.length >= 1 ? (
           <button type='button' className='clear' onClick={handleClear}>
             🗑
