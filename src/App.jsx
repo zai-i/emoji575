@@ -15,7 +15,7 @@ function App() {
   useEffect(() => {
     window.addEventListener('resize', handleWindowSizeChange);
     return () => {
-      window.removeEventListener('resize', handleWindowSizeChange);
+      window.removeEventListener('resize' handleWindowSizeChange);
     };
   }, []);
 
@@ -29,23 +29,13 @@ function App() {
     generateHaiku();
   }, [emojiKeywords]);
 
-  const smarten = (string) => {
-    string = string.replace(/(^|[-\u2014/([{"\s])'/g, '$1\u2018'); // opening singles
-    string = string.replace(/'/g, '\u2019'); // closing singles & apostrophes
-    string = string.replace(/(^|[-\u2014/([{\u2018\s])"/g, '$1\u201c'); // opening doubles
-    string = string.replace(/"/g, '\u201d'); // closing doubles
-    string = string.replace(/--/g, '\u2014'); // em-dashes
-
-    return string;
-  };
-
   const generateHaiku = () => {
     if (emojiKeywords.length > 0) {
         fetch(`${import.meta.env.VITE_SITE_URL}/api?text=${emojiKeywords}/`)
         .then(response => response.json())  
         .then(function (response) {
           setHaiku({
-            response: smarten(`${response.choices[0].message.content}`),
+            response: response,
           });
         })
         .catch(function (error) {
