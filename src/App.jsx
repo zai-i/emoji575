@@ -76,7 +76,7 @@ function App() {
       />
 
       <div className='container'>
-        <div className='haiku'>{haiku ? haiku.replace(/<br>/g, '\n') : null}</div>{' '}
+        <div className='haiku'>{haiku ? haiku : null}</div>{' '}
         {emojiIcons.length >= 1 ? (
           <button type='button' className='clear' onClick={handleClear}>
             🗑
