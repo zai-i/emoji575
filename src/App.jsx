@@ -41,7 +41,7 @@ function App() {
 
   const generateHaiku = () => {
     if (emojiKeywords.length > 0) {
-        fetch(`${import.meta.env.VITE_SITE_URL}/api?keywords=${emojiKeywords}/`)
+        fetch(`${import.meta.env.VITE_SITE_URL}/api?text=${emojiKeywords}/`)
         .then(response => response.json())  
         .then(function (response) {
           setHaiku({
