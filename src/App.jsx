@@ -32,9 +32,9 @@ function App() {
   const generateHaiku = () => {
     if (emojiKeywords.length > 0) {
         fetch(`${import.meta.env.VITE_SITE_URL}/api?text=${emojiKeywords}/`)
-        .then(response => response.json()  
+        .then(response => response.text()  
         .then(function (response) {
-          setHaiku(response.text)
+          setHaiku(response)
         })
         .catch(function (error) {
           console.error(error);
