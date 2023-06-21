@@ -65,7 +65,7 @@ function App() {
         emojis you choose!
       </div>
       <div className='emojiList'>{emojiIcons} </div>
-      <Picker
+      <div className={emojiIcons.length === 5 ? 'disabled' : ''}><Picker
         data={data}
         onEmojiSelect={(emoji) => addEmojis(emoji)}
         emojiButtonSize={isMobile ? 40 : 80}
@@ -73,7 +73,7 @@ function App() {
         searchPosition='none'
         navPosition='none'
         maxFrequentRows={0}
-      />
+      /></div>
 
       <div className='container'>
         <div className='haiku'>{haiku ? haiku : null}</div>{' '}
