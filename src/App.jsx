@@ -24,6 +24,7 @@ function App() {
   const [emojiKeywords, setEmojiKeywords] = useState([]);
   const [emojiIcons, setEmojiIcons] = useState([]);
   const [haiku, setHaiku] = useState('');
+  const [spinner, setSpinner] = useState(false);    
 
   useEffect(() => {
     generateHaiku();
@@ -31,9 +32,11 @@ function App() {
 
   const generateHaiku = () => {
     if (emojiKeywords.length > 0) {
+        setSpinner(true);
         fetch(`${import.meta.env.VITE_SITE_URL}/api?text=${emojiKeywords}/`)
         .then(response => response.text()  
         .then(function (response) {
+          setSpinner(false);
           setHaiku(response)
         })
         .catch(function (error) {
@@ -76,7 +79,7 @@ function App() {
       /></div>
 
       <div className='container'>
-        <div className='haiku'>{haiku ? haiku : null}</div>{' '}
+        <div className='haiku'>{spinner ? <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div> : haiku ? haiku : null}</div>{' '}
         {emojiIcons.length >= 1 ? (
           <button type='button' className='clear' onClick={handleClear}>
             🗑
