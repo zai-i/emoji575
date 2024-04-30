@@ -88,7 +88,7 @@ function App() {
       </div>
       <p className='credit'>
         made with <span></span> by{' '}
-        <a href='http://www.zaiz.ai'>Zainab Ismail</a>
+        <a href='http://www.ghazala.cc'>Zainab Ismail</a>
       </p>
     </>
   );
