@@ -32,6 +32,7 @@ function App() {
 
   const generateHaiku = () => {
     if (emojiKeywords.length > 0) {
+      console.log(emojiKeywords)
         setSpinner(true);
         fetch(`${import.meta.env.VITE_SITE_URL}/api?text=${emojiKeywords}/`)
         .then(response => response.text()  
@@ -64,7 +65,7 @@ function App() {
         <ThemeToggle />
       </div>
       <div className='instructions'>
-        ChatGPT will generate a haiku for you based on the combination of
+        Generate a haiku based on the combination of
         emojis you choose!
       </div>
       <div className='emojiList'>{emojiIcons} </div>
